@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JoJo's Bizarre Adventure Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- BARRA DE NAVEGACIÓN: para añadir/quitar apartados edita estos enlaces -->
+<header class="nav">
+  <a class="logo" href="#inicio">JJBA WIKI</a>
+  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+  <nav id="menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#partes">Partes de JoJo</a>
+    <a href="#personajes">Personajes</a>
+    <a href="#stands">Stands</a>
+    <a href="#formulario">Formulario</a>
+    <a href="#proyecto">Sobre el proyecto</a>
+  </nav>
+</header>
+
+<main>
+<!-- ========== INICIO ========== -->
+<!-- CAMBIAR IMAGEN DE FONDO: coloca tu imagen en images/backgrounds/hero.jpg (si no existe se ve el degradado) -->
+<section id="inicio" class="hero">
+  <span class="gogo">ゴゴゴゴ</span>
+  <!-- AQUÍ PUEDES CAMBIAR EL TÍTULO PRINCIPAL -->
+  <h1>JOJO'S BIZARRE ADVENTURE WIKI</h1>
+  <p class="lead">JoJo's Bizarre Adventure es el manga de Hirohiko Araki (publicado desde 1987): la saga de la familia Joestar, con una generación de protagonistas distinta en cada parte, combates de ingenio y los famosos Stands. Aquí tienes sus 9 partes, personajes y Stands.</p>
+  <div class="cta">
+    <a class="btn" href="#partes">Explorar las partes</a>
+    <a class="btn alt" href="#formulario">Rellenar el formulario</a>
+  </div>
+</section>
+
+<!-- BUSCADOR Y FILTROS (funciona sobre partes, personajes y Stands a la vez) -->
+<section class="tools" aria-label="Buscador">
+  <input id="q" type="search" placeholder="Busca un personaje, Stand, parte, protagonista, antagonista…">
+  <select id="role" aria-label="Filtrar por rol">
+    <option value="">Todos los roles</option>
+    <option>protagonista</option><option>antagonista</option><option>secundario</option>
+  </select>
+  <div id="pills" class="pills"></div>
+</section>
+
+<section id="destacados">
+  <h2>Personajes destacados</h2>
+  <div id="galeria" class="grid small"></div>
+  <h2>Stands populares</h2>
+  <div id="galeriaS" class="grid small"></div>
+</section>
+
+<!-- ========== PARTES ========== -->
+<section id="partes">
+  <h2>Las 9 partes</h2>
+  <p class="note">Ojo: son partes del <b>manga</b>. El anime solo adapta algunas (se indica en cada tarjeta).</p>
+  <div id="partsGrid" class="grid"></div>
+</section>
+
+<!-- ========== PERSONAJES ========== -->
+<section id="personajes">
+  <h2>Personajes</h2>
+  <div id="charGrid" class="grid"></div>
+</section>
+
+<!-- ========== STANDS ========== -->
+<section id="stands">
+  <h2>Stands</h2>
+  <div id="standGrid" class="grid"></div>
+</section>
+
+<!-- ========== FORMULARIO (no se envía a ningún servidor) ========== -->
+<section id="formulario">
+  <h2>Tu opinión sobre JoJo</h2>
+  <form id="jojoForm" novalidate>
+    <label>Nombre o apodo *<input name="nombre" required></label>
+    <label>Parte favorita *<select name="parte" id="fParte" required><option value="">Elige…</option></select></label>
+    <label>Personaje favorito *<input name="personaje" list="dChar" required></label>
+    <label>Stand favorito *<input name="stand" list="dStand" required></label>
+    <label>¿Quién es tu JoJo favorito? *<select name="jojo" required><option value="">Elige…</option>
+      <option>Jonathan Joestar</option><option>Joseph Joestar</option><option>Jotaro Kujo</option><option>Josuke Higashikata (Parte 4)</option><option>Giorno Giovanna</option><option>Jolyne Cujoh</option><option>Johnny Joestar</option><option>Josuke Higashikata (Parte 8)</option><option>Jodio Joestar</option></select></label>
+    <label>¿Mejor antagonista? *<select name="anta" id="fAnta" required><option value="">Elige…</option></select></label>
+    <label>¿Qué habilidad de Stand te gustaría tener? *<input name="habilidad" required></label>
+    <label>Valoración general (1-10) *<select name="nota" required><option value="">Elige…</option>
+      <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></label>
+    <label class="full">Opinión personal * (mínimo 10 caracteres)<textarea name="opinion" rows="4" required></textarea></label>
+    <p id="formMsg" role="alert"></p>
+    <button class="btn" type="submit">Enviar opinión</button>
+  </form>
+  <datalist id="dChar"></datalist><datalist id="dStand"></datalist>
+</section>
+
+<!-- ========== SOBRE EL PROYECTO ========== -->
+<section id="proyecto">
+  <h2>Sobre el proyecto</h2>
+  <p>Esta wiki es un proyecto <b>informativo y de consulta</b> dedicado a JoJo's Bizarre Adventure y a sus personajes. Su objetivo es reunir en un único sitio, ordenado y fácil de navegar, las partes de la obra, sus protagonistas, antagonistas y Stands.</p>
+  <p>JoJo's Bizarre Adventure fue creado por <b>Hirohiko Araki</b>, mangaka japonés que empezó la serie en 1987 en la revista Weekly Shōnen Jump. Todos los derechos de la obra pertenecen a su autor y a sus editores; este es un proyecto de aficionados sin ánimo de lucro.</p>
+</section>
+</main>
+
+<footer>
+  <a href="#inicio">Inicio</a><a href="#partes">Partes</a><a href="#personajes">Personajes</a><a href="#stands">Stands</a><a href="#formulario">Formulario</a><a href="#proyecto">Sobre el proyecto</a>
+  <p>Wiki de aficionados · JoJo's Bizarre Adventure © Hirohiko Araki / Shueisha</p>
+</footer>
+
+<button id="up" aria-label="Volver arriba">▲</button>
+
+<!-- VENTANA DE FICHA DETALLADA (personajes, Stands y partes) -->
+<div id="modal" class="modal" hidden><div class="box" id="modalBox"></div></div>
+<!-- AVISO DE SPOILERS: aparece una vez antes de abrir la primera ficha -->
+<div id="spoiler" class="modal" hidden><div class="box"><h3>⚠ Aviso de spoilers</h3><p>Las fichas pueden revelar giros importantes de la historia.</p><button class="btn" id="spOk">Entiendo, continuar</button> <button class="btn alt" id="spNo">Cancelar</button></div></div>
+
+<script src="script.js"></script>
+</body>
+</html>
